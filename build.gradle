@@ -63,11 +63,6 @@ task android(type: Test) {
     }
 }
 
-task emulation(type: Test) {
-    useJUnitPlatform {
-        includeTags("emulation")
-    }
-}
 
 task ios(type: Test) {
     useJUnitPlatform {
