@@ -17,23 +17,6 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class TestBase {
 
-    public static String env = System.getProperty("env");
-    @BeforeAll
-    public static void setDriver(){
-        switch (env) {
-            case "emulation":
-                Configuration.browser = LocalMobileDriver.class.getName();
-                break;
-            case "ios":
-                Configuration.browser = BrowserstackMobileDriver.class.getName();
-                break;
-            case "android":
-                Configuration.browser = BrowserstackMobileDriver.class.getName();
-                break;
-        }
-        Configuration.browserSize = null;
-    }
-
     @BeforeEach
     void addListener() {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
