@@ -1,5 +1,6 @@
 package tests;
 
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.CollectionCondition.sizeGreaterThan;
@@ -12,6 +13,7 @@ import static io.qameta.allure.Allure.step;
 public class SearchTests extends TestBase {
 
     @Test
+    @Tag("android")
     void successfulSearchTest() {
         step("Type search", () -> {
             $(accessibilityId("Search Wikipedia")).click();
@@ -23,6 +25,7 @@ public class SearchTests extends TestBase {
     }
 
     @Test
+    @Tag("ios")
     void successfulSearchT123est() {
         step("Type search", () -> {
             $(accessibilityId("Search Wikipedia")).click();
