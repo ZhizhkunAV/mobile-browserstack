@@ -16,7 +16,12 @@ import static com.codeborne.selenide.Selenide.open;
 
 
 public class TestBase {
-
+    @BeforeAll
+    static void beforeAll() {
+        Configuration.browser = BrowserstackMobileDriver.class.getName();
+        Configuration.browserSize = null;
+        Configuration.timeout = 30000;
+    }
     @BeforeEach
     void addListener() {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
