@@ -22,7 +22,6 @@ public interface BrowserstackConfig extends Config {
 
     String project();
 
-
     String build();
 
     @Key("test_name")
