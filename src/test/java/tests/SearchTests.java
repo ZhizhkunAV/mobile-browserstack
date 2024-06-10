@@ -2,6 +2,7 @@ package tests;
 
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.condition.EnabledIfSystemProperty;
 
 import static com.codeborne.selenide.CollectionCondition.sizeGreaterThan;
 import static com.codeborne.selenide.Condition.text;
@@ -13,6 +14,7 @@ import static io.qameta.allure.Allure.step;
 public class SearchTests extends TestBase {
 
     @Test
+    @EnabledIfSystemProperty(named = "platform", matches = "android")
     @Tag("android")
     void successfulSearchTest() {
         step("Type search", () -> {
@@ -25,6 +27,7 @@ public class SearchTests extends TestBase {
     }
 
     @Test
+    @EnabledIfSystemProperty(named = "platform", matches = "ios")
     @Tag("ios")
     void successfulSearchAnotherTest() {
         step("Type search", () -> {

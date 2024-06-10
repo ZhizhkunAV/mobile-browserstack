@@ -15,8 +15,8 @@ public interface DriverConfig extends Config {
     @Key("app")
     String getApp();
 
-    @Key("device")
-    String getDevice();
+    @Key("platform")
+    String getPlatform();
 
     @Key("baseurl")
     String getBaseUrl();
