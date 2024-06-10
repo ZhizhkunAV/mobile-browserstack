@@ -36,10 +36,11 @@ public class BrowserstackDriver implements WebDriverProvider {
         caps.setCapability("project", config.getProject());
         caps.setCapability("build", config.getBuild());
         caps.setCapability("name", config.getName());
-        System.out.println(config.toString());
+
+
         try {
             return new RemoteWebDriver(
-                    new URL(config.getBaseUrl()), caps);
+                    new URL("https://hub.browserstack.com/wd/hub"), caps);
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }
