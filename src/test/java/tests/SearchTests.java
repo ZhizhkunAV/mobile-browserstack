@@ -14,7 +14,6 @@ import static io.qameta.allure.Allure.step;
 public class SearchTests extends TestBase {
 
     @Test
-
     @Tag("android")
     void successfulSearchTest() {
         step("Type search", () -> {
@@ -27,7 +26,6 @@ public class SearchTests extends TestBase {
     }
 
     @Test
-
     @Tag("ios")
     void successfulSearchAnotherTest() {
         step("Type search", () -> {
