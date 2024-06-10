@@ -14,7 +14,7 @@ import static io.qameta.allure.Allure.step;
 public class SearchTests extends TestBase {
 
     @Test
-    @EnabledIfSystemProperty(named = "platform", matches = "android")
+
     @Tag("android")
     void successfulSearchTest() {
         step("Type search", () -> {
@@ -27,7 +27,7 @@ public class SearchTests extends TestBase {
     }
 
     @Test
-    @EnabledIfSystemProperty(named = "platform", matches = "ios")
+
     @Tag("ios")
     void successfulSearchAnotherTest() {
         step("Type search", () -> {

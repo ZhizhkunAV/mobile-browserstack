@@ -1,10 +1,9 @@
 package drivers;
 
 import org.aeonbits.owner.Config;
-@Config.LoadPolicy(Config.LoadType.MERGE)
-@Config.Sources({
-        "classpath:config/${env}.properties"
-})
+@Config.Sources(
+        {"classpath:android.properties"}
+)
 public interface DriverConfig extends Config {
     @Key("user")
     String getUser();
