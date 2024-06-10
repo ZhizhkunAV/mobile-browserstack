@@ -21,8 +21,8 @@ public class BrowserstackDriver implements WebDriverProvider {
         MutableCapabilities caps = new MutableCapabilities();
 
         // Set your access credentials
-        caps.setCapability("browserstack.user", "andrey_IwD6SB");
-        caps.setCapability("browserstack.key", "cakgbAghvsyZzbybqzxd");
+        caps.setCapability("user", config.getUser());
+        caps.setCapability("key", config.getKey());
 
         // Set URL of the application under test
         caps.setCapability("app", config.getApp());
@@ -36,10 +36,10 @@ public class BrowserstackDriver implements WebDriverProvider {
         caps.setCapability("project", config.getProject());
         caps.setCapability("build", config.getBuild());
         caps.setCapability("name", config.getName());
-        caps.setCapability("baseurl", config.getBaseUrl());
 
         try {
-            return new RemoteWebDriver(new URL("https://hub.browserstack.com/wd/hub"), caps);
+            return new RemoteWebDriver(
+                    new URL(config.getBaseUrl()), caps);
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }
