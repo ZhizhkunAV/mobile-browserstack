@@ -15,7 +15,6 @@ import static io.qameta.allure.Allure.step;
 public class SearchTests extends TestBase {
 
     @Test
-    @Tag("mobile")
     void successfulSearchqwTest() {
         step("Type search", () -> {
             $(accessibilityId("Search Wikipedia")).click();
@@ -26,7 +25,6 @@ public class SearchTests extends TestBase {
                         .shouldHave(sizeGreaterThan(0)));
     }
     @Test()
-    @Tag("mobile")
     void successfulSearchTest() {
         step("Type search", () -> {
             $(accessibilityId("Search Wikipedia")).click();
