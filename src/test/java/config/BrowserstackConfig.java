@@ -2,14 +2,13 @@ package config;
 
 import org.aeonbits.owner.Config;
 
-@Config.Sources(
-        {"classpath:mobile.properties"}
-)
+@Config.LoadPolicy(Config.LoadType.MERGE)
+@Config.Sources({"system:properties",
+        "classpath:config/mobile.properties"})
 public interface BrowserstackConfig extends Config {
 
     @Key("app")
     String applId();
-
 
     String device();
 
