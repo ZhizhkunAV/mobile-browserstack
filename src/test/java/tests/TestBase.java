@@ -15,11 +15,11 @@ public class TestBase {
 
     @BeforeAll
     static void beforeAll() {
-        System.setProperty("env", System.getProperty("env", "android"));
-        System.setProperty("env", System.getProperty("env", "ios"));
+
         Configuration.browser = BrowserstackDriver.class.getName();
         Configuration.browserSize = null;
         Configuration.timeout = 30000;
+
     }
 
     @BeforeEach

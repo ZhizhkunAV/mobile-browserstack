@@ -13,7 +13,7 @@ import static io.qameta.allure.Allure.step;
 public class SearchTests extends TestBase {
 
     @Test
-    @Tag("android")
+    @Tag("ios")
     void successfulSearchTest() {
         step("Type search", () -> {
             $(accessibilityId("Search Wikipedia")).click();
@@ -25,7 +25,7 @@ public class SearchTests extends TestBase {
     }
 
     @Test
-    @Tag("ios")
+    @Tag("android")
     void successfulSearchAnotherTest() {
         step("Type search", () -> {
             $(accessibilityId("Search Wikipedia")).click();
