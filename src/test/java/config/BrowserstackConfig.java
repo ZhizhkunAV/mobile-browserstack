@@ -4,7 +4,7 @@ import org.aeonbits.owner.Config;
 
 @Config.LoadPolicy(Config.LoadType.MERGE)
 @Config.Sources({"system:properties",
-        "classpath:config/${env}.properties"})
+        "classpath:config/andriod.properties"})
 public interface BrowserstackConfig extends Config {
 
     @Key("app")
