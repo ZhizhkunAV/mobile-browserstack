@@ -16,24 +16,24 @@ public class SearchTests extends TestBase {
 
     @Test
     @Tag("android")
-    void androidSuccessfulSearchTest() {
+    void successfulSearchqwTest() {
         step("Type search", () -> {
             $(accessibilityId("Search Wikipedia")).click();
-            $(id("org.wikipedia.alpha:id/search_src_text")).sendKeys("java");
+            $(id("org.wikipedia.alpha:id/search_src_text")).sendKeys("Appium");
         });
         step("Verify content found", () ->
                 $$(id("org.wikipedia.alpha:id/page_list_item_title"))
                         .shouldHave(sizeGreaterThan(0)));
     }
-
     @Test()
     @Tag("ios")
-    void iosCheckInputTest() {
+    void successfulSearchTest() {
         step("Type search", () -> {
-            $(accessibilityId("Text Button")).click();
+            $(accessibilityId("Search Wikipedia")).click();
+            $(id("org.wikipedia.alpha:id/search_src_text")).sendKeys("Henry VIII");
         });
-        step("Check that text input should be visible ", () -> {
-            $(accessibilityId("Text Input")).shouldBe(visible);
-        });
+        step("Verify content found", () ->
+                $$(id("org.wikipedia.alpha:id/page_list_item_title"))
+                        .shouldHave(sizeGreaterThan(0)));
     }
 }

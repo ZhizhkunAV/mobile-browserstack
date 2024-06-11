@@ -5,7 +5,6 @@ import org.aeonbits.owner.Config;
 @Config.LoadPolicy(Config.LoadType.MERGE)
 @Config.Sources({"system:properties",
         "classpath:config/${env}.properties"})
-
 public interface BrowserstackConfig extends Config {
 
     @Key("app")
@@ -21,6 +20,7 @@ public interface BrowserstackConfig extends Config {
     String browserstackURL();
 
     String project();
+
 
     String build();
 

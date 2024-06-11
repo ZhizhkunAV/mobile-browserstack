@@ -1,6 +1,7 @@
 package drivers;
 
 import com.codeborne.selenide.WebDriverProvider;
+
 import config.AuthConfig;
 import config.BrowserstackConfig;
 import org.aeonbits.owner.ConfigFactory;
@@ -37,16 +38,15 @@ public class BrowserstackDriver implements WebDriverProvider {
         // Set other BrowserStack capabilities
         caps.setCapability("project", browserstackConfig.project());
         caps.setCapability("build", browserstackConfig.build());
-        caps.setCapability("test_name", browserstackConfig.testName());
+        caps.setCapability("name", browserstackConfig.testName());
 
         // Initialise the remote Webdriver using BrowserStack remote URL
         // and desired capabilities defined above
         try {
             return new RemoteWebDriver(
-                    new URL("https://hub.browserstack.com/wd/hub"), caps);
+                    new URL(browserstackConfig.browserstackURL()), caps);
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }
     }
 }
-
